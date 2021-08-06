@@ -58,7 +58,7 @@ README
  <a href="#">Link 2</a> |
  <a href="#">Link 3</a>
  <br><br>
- <img src="https://latex.codecogs.com/png.latex?A%20%3D%20%5Cfrac%7Ba%7D%7Bb%7D">
+ <img src="https://latex.codecogs.com/png.latex?%5CLARGE%20A%20%3D%20%5Cfrac%7Ba%7D%7Bb%7D">
 </p>
 
 图片同理  
