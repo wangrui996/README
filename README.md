@@ -15,6 +15,7 @@ README
 
 ****
 ## 目录
+* [公式和图片](#公式和图片)
 * [横线](#横线)
 * [标题](#标题)
 * [文本](#文本)
@@ -45,6 +46,22 @@ README
 * [表情](#表情)
 * [diff语法](#diff语法)
 
+
+### 公式和图片插入
+[公式在线编辑器](https://latex.codecogs.com/eqneditor/editor.php)
+编辑好公式后复制图片格式的URL到下面的src中，align中可以修改对齐方式
+<p align="center"><img src="https://latex.codecogs.com/png.latex?A%20%3D%20%5Cfrac%7Ba%7D%7Bb%7D"></p>
+也可以对公式添加说明，链接
+<p align="center" width = "300" height = "200">
+ <b>Some Links:</b><br>
+ <a href="#">Link 1</a> |
+ <a href="#">Link 2</a> |
+ <a href="#">Link 3</a>
+ <br><br>
+ <img src="https://latex.codecogs.com/png.latex?A%20%3D%20%5Cfrac%7Ba%7D%7Bb%7D">
+</p>
+图片同理  
+
 ### 横线
 -----------
 ***、---、___可以显示横线效果
@@ -71,7 +88,7 @@ ___
 ### 普通文本
 这是一段普通的文本
 ### 单行文本
-    Hello,大家好，我是果冻虾仁。
+	Hello,大家好，我是果冻虾仁。
 在一行开头加入1个Tab或者4个空格。
 ### 文本块
 #### 语法1
