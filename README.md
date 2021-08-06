@@ -51,8 +51,8 @@ README
 [公式在线编辑器](https://latex.codecogs.com/eqneditor/editor.php)
 编辑好公式后复制图片格式的URL到下面的src中，align中可以修改对齐方式
 <p align="center"><img src="https://latex.codecogs.com/png.latex?A%20%3D%20%5Cfrac%7Ba%7D%7Bb%7D"></p>
-也可以对公式添加说明，链接
-<p align="center" width = "300" height = "200">
+也可以对公式添加说明
+<p align="center">
  <b>Some Links:</b><br>
  <a href="#">Link 1</a> |
  <a href="#">Link 2</a> |
@@ -60,7 +60,10 @@ README
  <br><br>
  <img src="https://latex.codecogs.com/png.latex?A%20%3D%20%5Cfrac%7Ba%7D%7Bb%7D">
 </p>
+
 图片同理  
+
+
 
 ### 横线
 -----------
