@@ -48,7 +48,8 @@ README
 
 
 ### 公式和图片插入
-[公式在线编辑器](https://latex.codecogs.com/eqneditor/editor.php)
+[公式在线编辑器](https://latex.codecogs.com/eqneditor/editor.php)  
+[mp4在线转gif](https://www.aconvert.com/cn/video/mp4-to-gif/)  
 编辑好公式后复制图片格式的URL到下面的src中，align中可以修改对齐方式
 <p align="center"><img src="https://latex.codecogs.com/png.latex?A%20%3D%20%5Cfrac%7Ba%7D%7Bb%7D"></p>
 也可以对公式添加说明
