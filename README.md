@@ -421,3 +421,20 @@ GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示�
 [csdn-logo]:/img/csdn.png "我的CSDN博客"
 [code-past]:/img/codepast-logo.jpg "公众号：编程往事"
 [zhihu-shield]:https://img.shields.io/badge/dynamic/json?color=0084ff&logo=zhihu&label=%E6%9E%9C%E5%86%BB%E8%99%BE%E4%BB%81&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dzhihu%26queryKey%3Dguodongxiaren
+
+I ran some more tests, in which I just moved the drone with my hand in hand. I converted the local data read by px4 into a trajectory and compared it with the trajectory of the visual inertial odometry.   
+The green one is the trajectory of the visual inertial odometry, the red one is the px4 ("mavros/local_position/pose")  
+
+1. The first time I moved very slowly, the z direction followed better, and the x and y directions drifted to a certain extent, about 10-20cm  
+<p align="center"><img src="https://user-images.githubusercontent.com/58176267/128639891-8871a23b-bfba-4bbc-ae6a-8813585772b9.gif"></p>
+2. The second time the speed is a little faster but still very stable, the effect is obviously poorer? 
+<p align="center"><img src="https://user-images.githubusercontent.com/58176267/128639970-cffb0fa2-d25e-4bed-8875-0c6e46198eda.gif"></p>
+3. In the third test, there was a bad phenomenon, which is consistent with the actual flight problem I mentioned in the question. Because I moved relatively smoothly during the test, in fact, I think that in actual flight, the drone will face such a problem just after taking off, resulting in the inability to locate well.
+<p align="center"><img src="https://user-images.githubusercontent.com/58176267/128640124-39f939e9-255c-4b26-9542-c40f8dc6d257.gif"></p>  
+In addition, I have a doubt about how the position and orientation should be set in the data sent to the topic "/mavros/vision_pose/pose".  
+Currently, I use [Vins-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion) to output the topic "/vins_estimator/camera_pose", and put its position in x,
+y, z are directly given to "/mavros/vision_pose/pose", but about the pose quaternion, because the z-axis of the camera pose output by the odometry is forward, direct assignment will cause the yaw angle fusion to fail. Here I refer to in [Real-XTDrone](https://github.com/robin-shaun/Real-XTDrone/blob/master/sensing/vins_transfer.py)，the practice of this file.  
+After fusion, I found that the yaw angle of px4 is always different from the camera by 90°. I don’t understand the principle, so I violently multiply the yaw angle in front of the quaternion input to px4. Rotating 90° corresponds to the quaternion, so that it looks right after fusion, and the two can also correspond to a certain angle.   
+But it should be problematic for me to do this? If so, can you tell me what to do? I will be very grateful! In addition, will this affect the integration of ekf2? Is it possible that the above question is also related to this?
+It may be a little messy, please help guide, if there is anything I need to do, please let me know, thank you in advance for your help!
+[Vins-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion)
